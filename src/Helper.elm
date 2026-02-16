@@ -31,8 +31,8 @@ languages =
     ]
 
 
-lenguageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
-lenguageNames languagesList =
+languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
+languageNames languagesList =
     List.map .name languagesList
 
 
