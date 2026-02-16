@@ -36,34 +36,25 @@ languageNames languagesList =
     List.map .name languagesList
 
 
-type alias RecordName =
+type alias User =
     { name : String
     , uType : String
     }
 
 
-users : List RecordName
-users =
-    [ { name = "Alice"
-      , uType = "Student"
-      }
-    , { name = "Bob"
-      , uType = "Professor"
-      }
-    , { name = "Charlie"
-      , uType = "Student"
-      }
-    ]
+onlyStudents : List User -> List String
+onlyStudents lista =
+    List.map estudiante lista
 
 
-onlyStudents : { name : String, uType : String } -> List String
-onlyStudents usersList =
-    case usersList.uType of
+estudiante : { name : String, uType : String } -> String
+estudiante miembro =
+    case miembro.uType of
         "Student" ->
-            [ usersList.name ]
+            .name miembro
 
         _ ->
-            []
+            ""
 
 
 type alias Videogame =
